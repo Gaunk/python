@@ -86,11 +86,11 @@
         
         <div class="row">
         {% for post in posts  %}
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 text-center">
+          <div class="col-md-6 col-lg-3 text-center">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"></div>
-              <h4 class="title"><a href="">{{post.title}}</a></h4>
-              <p class="description">{{post.content}}</p>
+              <div class="icon"><img class="img-fluid" src="{{post.img.url}}"></div>
+              <h4 class="title"><a href="" class="text-truncate">{{post.title}}</a></h4>
+              <p class="description text-truncate">{{post.content}}</p>
               <a href="/blog" class="btn btn-outline-info">Belajar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
             </svg>
