@@ -18,7 +18,7 @@ def home(request):
 
 
 def blog(request):
-    week_ago = datetime.date.today() - datetime.timedelta(days=0)
+    week_ago = datetime.date.today() - datetime.timedelta(days=8)
     trends = Post.objects.filter(
         publish=True, time_upload__gte=week_ago).order_by('-read')
     now = datetime.datetime.now()
@@ -33,7 +33,7 @@ def blog(request):
 
 
 def postingan(request, url):
-    post = Post.objects.filter()
+    post = Post.objects.filter(publish=True)
     context = {
         'post': post,
     }
