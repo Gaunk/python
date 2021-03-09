@@ -110,13 +110,15 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
-    {% for post in posts|slice:":4" %}
+    {% for post in posts %}
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
               <i class="icofont-doctor-alt"></i>
-              <span data-toggle="counter-up">{{post.read}}</span>
-              <p><strong>{{post.title}}</strong> {{post.content}}</p>
-              <a href="/postingan/{{post.url}}">Find out more &raquo;</a>
+              <span data-toggle="counter-up">{{post.views}}</span>
+              <p><strong>{{post.title}}</strong></p>
+              <a href="/postingan/{{post.url}}">Selanjutnya &raquo;</a>
+              <p class="card-text"><small class="text-muted">Tanggal : {{post.time_upload}}</small></p>
+
             </div>
           </div>
 {% endfor %}
