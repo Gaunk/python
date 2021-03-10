@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse
 from django.template import loader
-from .models import Post, Author, ListHarga
+from .models import Post, Author, ListHarga, TempatKursus, JoinField
 import pytz
 from datetime import datetime
 import datetime
@@ -8,11 +8,11 @@ import datetime
 
 
 def home(request):
-    biaya = Post.objects.all()
+    biaya = ListHarga.objects.all()
 
     # biaya = ListHarga.objects.all()
     now = datetime.datetime.now()
-    context = {'biaya': ListHarga.objects.filter().first,
+    context = {'biaya': biaya,
                'now': now,
                'otherdate': now + datetime.timedelta(days=0),
                }
@@ -20,9 +20,11 @@ def home(request):
 
 
 def blog(request):
+    # tempatkursus = TempatKursus.objects.create()
     posts = Post.objects.all()
     now = datetime.datetime.utcnow()
     context = {
+        'kursus': TempatKursus.objects.all(),
         'posts': Post.objects.filter(publish=True),
         'now': now,
         'otherdate': now + datetime.timedelta(days=0),

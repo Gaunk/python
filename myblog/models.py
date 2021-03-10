@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from joinfield.joinfield import JoinField
 # Create your models here.
 
 
@@ -31,7 +32,6 @@ class ListHarga(models.Model):
     halaman = models.CharField(max_length=100)
     biaya_setup = models.CharField(max_length=50)
     hosting = models.CharField(max_length=50)
-    list_url = models.CharField(("myblog_listharga.urls"), max_length=100)
 
     def __str__(self):
         return self.title
@@ -50,6 +50,14 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-pk']
+
+    def __str__(self):
+        return self.title
+
+
+class TempatKursus(models.Model):
+    title = models.CharField(max_length=50)
+    t_content = models.CharField(max_length=150)
 
     def __str__(self):
         return self.title

@@ -579,6 +579,7 @@
         </div>
 
         <div class="row">
+        {% for biaya in biaya  %}
           <div class="col-lg-3 col-md-6">
             <div class="box" data-aos="fade-up" data-aos-delay="100">
               <h3>{{biaya.title}}</h3>
@@ -588,7 +589,7 @@
                 <li>Nec feugiat nisl</li>
                 <li>Nulla at volutpat dola</li>
                 <li class="na">Pharetra massa</li>
-                <li class="na">{{biaya.biaya_setup}}</li>
+                <li>Biaya Setup<span> {{biaya.biaya_setup}}</span></li>
               </ul>
               <div class="btn-wrap">
                 <a href="#" class="btn-buy">Beli</a>
@@ -596,39 +597,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-              <h3>Paket 2</h3>
-              <h4><sup>Rp</sup>{{biaya.price}}<span></span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Beli</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="fade-up" data-aos-delay="300">
-              <h3>Paket 3</h3>
-              <h4><sup>Rp</sup>1.000.000<span></span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Beli</a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
           <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="fade-up" data-aos-delay="400">
