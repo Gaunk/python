@@ -58,6 +58,8 @@ class Post(models.Model):
 class TempatKursus(models.Model):
     title = models.CharField(max_length=50)
     t_content = models.CharField(max_length=150)
+    t_img = models.ImageField(upload_to='img')
+    time_up = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

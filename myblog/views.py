@@ -21,10 +21,11 @@ def home(request):
 
 def blog(request):
     # tempatkursus = TempatKursus.objects.create()
+    kursus = TempatKursus.objects.all()
     posts = Post.objects.all()
     now = datetime.datetime.utcnow()
     context = {
-        'kursus': TempatKursus.objects.all(),
+        'kursus': kursus,
         'posts': Post.objects.filter(publish=True),
         'now': now,
         'otherdate': now + datetime.timedelta(days=0),
