@@ -28,17 +28,20 @@ class PilihanHarga(models.Model):
 
 class ListHarga(models.Model):
     title = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=10, decimal_places=3)
+    price = models.DecimalField(max_digits=9, decimal_places=3)
     halaman = models.CharField(max_length=100)
     biaya_setup = models.CharField(max_length=50)
     hosting = models.CharField(max_length=50)
+    maintenance = models.TextField()
+    tambahan = models.TextField()
+    domain = models.TextField()
 
     def __str__(self):
         return self.title
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=100)
     content = models.TextField()
     time_upload = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
